@@ -11,25 +11,12 @@
 
 <ion-content [fullscreen]="true">
   <app-menu-bar></app-menu-bar>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <!--<ion-button (click)="addNewContact($event)" color="primary" size="large">-->
-         <a href="toAddNewContact"><ion-button color="primary" size="large"> 
-          <ion-icon name="person-add-outline"></ion-icon>
-        </ion-button>
-      </a> 
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
        <ion-list #forContacts>
-         
        </ion-list>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-
 </ion-content>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="addNewContact($event)">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 

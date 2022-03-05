@@ -13,7 +13,8 @@ export class ChatRowComponent implements OnInit {
   @Input() opponentID:string = ""
   @Input() opponentName:string = ""
   @Input() opponentAvatarURL:string = ""
-
+  @Input() avatar:boolean = false;
+  @Input() icon:boolean = false;
   ngOnInit() {}
   toSingleChat(event:any,opponentID:string){
     this.router.navigate(['toSingleChat/'+opponentID]);

@@ -32,7 +32,7 @@ export class SendChatFormComponent implements OnInit {
     formData.append("myUserID",this.myUserID);
     formData.append("opponentID",this.opponentID);
     formData.append("chatMessage",this.textInput);
-    this.httpObj.post<FormData>('https://rukshanmobileapp.artsuit.ca/index.php/Chats/feedChat',formData).subscribe(data => {
+    this.httpObj.post<FormData>('https://chat.tamilcoders.ca/index.php/Chats/feedChat',formData).subscribe(data => {
       innerThis.textInput = "";
       innerThis.toChatContainer.emit(null);
    });

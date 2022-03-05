@@ -24,7 +24,16 @@ export class Tab1Page {
         const componentRef = innerThis.forChatRow.createComponent(factory);
         componentRef.instance.opponentID=element.id;
         componentRef.instance.opponentName=element.username;
-        componentRef.instance.opponentAvatarURL="https://chat.tamilcoders.ca/"+element.avatarURL;
+        if(element.avatarURL!=null){
+          componentRef.instance.avatar=true;
+          componentRef.instance.icon=false;
+          componentRef.instance.opponentAvatarURL="https://chat.tamilcoders.ca/"+element.avatarURL;
+        }
+        else{
+          componentRef.instance.avatar=false;
+          componentRef.instance.icon=true;
+          componentRef.instance.opponentAvatarURL="";
+        }
     });
 });
 }

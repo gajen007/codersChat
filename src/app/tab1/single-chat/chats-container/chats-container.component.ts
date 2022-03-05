@@ -26,7 +26,7 @@ export class ChatsContainerComponent implements OnInit {
     //setInterval(()=>{
       innerThis.myUserID = localStorage.getItem("UserID");
         innerThis.singleChat.clear();
-        innerThis.httpObj.get('https://rukshanmobileapp.artsuit.ca/index.php/Chats/getChatsBetween?userIDToServer='+innerThis.myUserID+'&opponentIDToServer='+innerThis.opponentID).pipe(map((res:any)=>{return res;})).subscribe(data => {
+        innerThis.httpObj.get('https://chat.tamilcoders.ca/index.php/Chats/getChatsBetween?userIDToServer='+innerThis.myUserID+'&opponentIDToServer='+innerThis.opponentID).pipe(map((res:any)=>{return res;})).subscribe(data => {
           if (data != null) {
             data.forEach((element:any) => {
               innerThis.containerHeight=(parseInt(innerThis.containerHeight)+2).toString();
@@ -34,7 +34,7 @@ export class ChatsContainerComponent implements OnInit {
                 const factory = innerThis.cfr.resolveComponentFactory(ChatAttachmentComponent);
                 const componentRef = innerThis.singleChat.createComponent(factory);
                 componentRef.instance.chatMessage=element.chatMessage;
-                componentRef.instance.attachmentURL="https://rukshanmobileapp.artsuit.ca/"+element.resourceURL;
+                componentRef.instance.attachmentURL="https://chat.tamilcoders.ca/"+element.resourceURL;
                 if(element.senderID==innerThis.myUserID){
                   componentRef.instance.alignment="right";
                   componentRef.instance.buttonColor="success";

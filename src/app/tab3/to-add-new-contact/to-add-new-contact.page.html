@@ -8,62 +8,23 @@
     </ion-grid>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
   <app-menu-bar></app-menu-bar>
   <ion-grid>
-    
     <ion-row>
       <ion-col>
-        <ion-input [(ngModel)]="contactName" placeholder="Name"></ion-input>
+        <ion-input [(ngModel)]="contactName" type="text" placeholder="Name"></ion-input>
       </ion-col> 
      </ion-row>
-
-   <!--  <ion-row>
-      <ion-col>
-        <ion-input placeholder="Last Name"></ion-input>
-      </ion-col>
-     </ion-row>
-    -->
-
     <ion-row>
       <ion-col>
-        <ion-input [(ngModel)]="contactMobile" placeholder="Mobile"></ion-input>
+        <ion-input [(ngModel)]="contactEmail" type="email" placeholder="eMail"></ion-input>
       </ion-col>
      </ion-row>
-     
-     <!--
-     <ion-row>
-      <ion-col>
-        <ion-input placeholder="Home"></ion-input>
-      </ion-col>
-     </ion-row>
-     -->
-     
-     <!--
-     <ion-row>
-      <ion-col>
-        <ion-input placeholder="Work"></ion-input>
-      </ion-col>
-     </ion-row>
-    -->
-
-    <!--
-    <ion-row>
-      <ion-col>
-        <ion-input placeholder="Notes"></ion-input>
-      </ion-col>
-     </ion-row>
-     -->
-
      <ion-row>
       <ion-col align="center">
-        <ion-button (click)="addNewContact($event,contactName,contactMobile)" color="primary" size="medium">Save</ion-button>
+        <ion-button (click)="addNewContact($event,contactName,contactEmail)" color="primary" size="medium">Save</ion-button>
       </ion-col>
      </ion-row>
-
-   
-
   </ion-grid>
-
   </ion-content>

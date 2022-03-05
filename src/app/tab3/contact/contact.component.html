@@ -1,12 +1,9 @@
-  <a href="toSingleChat/{{contactUserID}}">
-    <ion-item>
-      <ion-label>
-        {{contactName}}
-      </ion-label>
-      &nbsp;
-      <ion-label>
-        {{contactNumber}}
-      </ion-label>
-    </ion-item>  
-  </a>
-  
+<ion-item (click)="clickFunction($event)">
+  <ion-avatar *ngIf="avatar" slot="start">
+    <img src="https://chat.tamilcoders.ca/{{avatarURL}}">
+  </ion-avatar>
+  <ion-icon *ngIf="icon" name="person-outline"></ion-icon>
+  &nbsp;<ion-label>
+    {{contactName}}
+  </ion-label>
+</ion-item>

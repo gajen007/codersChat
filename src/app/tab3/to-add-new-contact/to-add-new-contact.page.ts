@@ -15,12 +15,12 @@ export class ToAddNewContactPage implements OnInit {
 
   ngOnInit() {
   }
-  addNewContact(event:any,contactName:string,contactMobile:string){
+  addNewContact(event:any,contactName:string,contactEmail:string){
     let userID = localStorage.getItem("UserID");
     let formData=new FormData();
       formData.append("userID",userID);
       formData.append("contactNameToServer",contactName);
-      formData.append("contactMobileToServer",contactMobile);
+      formData.append("contactEmailToServer",contactEmail);
       this.httpObj.post<FormData>('https://chat.tamilcoders.ca/index.php/Contact/newContact',formData).subscribe(data => {
         alert(data['message']);
 });
