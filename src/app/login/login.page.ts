@@ -28,9 +28,17 @@ export class LoginPage implements OnInit {
 });
    
   }
-  gotoSignUp() {
-    this.router.navigateByUrl('signUp');
+
+  signUp(event:any,username:string,pw:string,email:string) {
+    let formData=new FormData();
+      formData.append("unToServer",username);
+      formData.append("pwToServer",pw);
+      formData.append("emailToServer",email);
+      this.httpObj.post<FormData>('https://chat.tamilcoders.ca/index.php/MainController/signUp',formData).subscribe(data => {
+        alert(data['message']);
+      });
   }
+  
   ngOnInit() {
 
   }
