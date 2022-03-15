@@ -9,12 +9,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
+  unLogin:string="";
+  pwLogin:string="";
+  unSignUp:string="";
+  pwSignUp:string="";
+  emSignUp:string="";
   constructor(private httpObj: HttpClient, private router: Router) { }
-  Login(username:string,pw:string) {
+  login(event:any) {
     let formData=new FormData();
-      formData.append("unToServer",username);
-      formData.append("pwToServer",pw);
+      formData.append("unToServer",unLogin);
+      formData.append("pwToServer",pwLogin);
       this.httpObj.post<FormData>('https://chat.tamilcoders.ca/index.php/MainController/login',formData).subscribe(data => {
        
       if (data['result']) {
@@ -28,12 +32,11 @@ export class LoginPage implements OnInit {
 });
    
   }
-
-  signUp(event:any,username:string,pw:string,email:string) {
+  signUp(event:any) {
     let formData=new FormData();
-      formData.append("unToServer",username);
-      formData.append("pwToServer",pw);
-      formData.append("emailToServer",email);
+      formData.append("unToServer",unSignUp);
+      formData.append("pwToServer",pwSignUp);
+      formData.append("emailToServer",emSignUp);
       this.httpObj.post<FormData>('https://chat.tamilcoders.ca/index.php/MainController/signUp',formData).subscribe(data => {
         alert(data['message']);
       });

@@ -14,17 +14,17 @@
           <ion-card-content>
             <ion-row>
               <ion-col>
-                <ion-input type="text" [(ngModel)]="username" placeholder="eMail"></ion-input>
+                <ion-input type="text" [(ngModel)]="unLogin" placeholder="eMail"></ion-input>
               </ion-col>
             </ion-row>
             <ion-row>
               <ion-col>
-                <ion-input type="password" [(ngModel)]="pw" placeholder="Password"></ion-input>
+                <ion-input type="password" [(ngModel)]="pwLogin" placeholder="Password"></ion-input>
               </ion-col>
             </ion-row>
             <ion-row>
               <ion-col align="center">
-                <ion-button color="success" size="medium" (click)="Login(username,pw)">Login</ion-button>
+                <ion-button color="success" size="medium" (click)="login($event)">Login</ion-button>
               </ion-col>
             </ion-row>
           </ion-card-content>
@@ -40,24 +40,24 @@
           <ion-card-content>
             <ion-row>
               <ion-col>
-                <ion-input type="text" [(ngModel)]="username" placeholder="Name"></ion-input>
+                <ion-input type="text" [(ngModel)]="unSignUp" placeholder="Name"></ion-input>
               </ion-col>
             </ion-row>
             <ion-row>
               <ion-col>
-                <ion-input type="password" [(ngModel)]="pw" placeholder="Password"></ion-input>
+                <ion-input type="password" [(ngModel)]="pwSignUp" placeholder="Password"></ion-input>
               </ion-col>
             </ion-row>
 
             <ion-row>
               <ion-col>
-                <ion-input type="email" [(ngModel)]="email" placeholder="eMail"></ion-input>
+                <ion-input type="email" [(ngModel)]="emSignUp" placeholder="eMail"></ion-input>
               </ion-col>
             </ion-row>
 
             <ion-row>
               <ion-col align="center">
-                <ion-button color="primary" size="medium" (click)="signUp($event,username,pw,email)">Sign Up</ion-button>
+                <ion-button color="primary" size="medium" (click)="signUp($event)">Sign Up</ion-button>
               </ion-col>
             </ion-row>
           </ion-card-content>
