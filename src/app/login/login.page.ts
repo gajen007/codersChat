@@ -17,8 +17,8 @@ export class LoginPage implements OnInit {
   constructor(private httpObj: HttpClient, private router: Router) { }
   login(event:any) {
     let formData=new FormData();
-      formData.append("unToServer",unLogin);
-      formData.append("pwToServer",pwLogin);
+      formData.append("unToServer",this.unLogin);
+      formData.append("pwToServer",this.pwLogin);
       this.httpObj.post<FormData>('https://chat.tamilcoders.ca/index.php/MainController/login',formData).subscribe(data => {
        
       if (data['result']) {
@@ -34,9 +34,9 @@ export class LoginPage implements OnInit {
   }
   signUp(event:any) {
     let formData=new FormData();
-      formData.append("unToServer",unSignUp);
-      formData.append("pwToServer",pwSignUp);
-      formData.append("emailToServer",emSignUp);
+      formData.append("unToServer",this.unSignUp);
+      formData.append("pwToServer",this.pwSignUp);
+      formData.append("emailToServer",this.emSignUp);
       this.httpObj.post<FormData>('https://chat.tamilcoders.ca/index.php/MainController/signUp',formData).subscribe(data => {
         alert(data['message']);
       });
